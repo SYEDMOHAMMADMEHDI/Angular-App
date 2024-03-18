@@ -1,0 +1,40 @@
+.main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card {
+    width: 25%;
+    margin: 30px
+}
+.card-inner{
+    text-align: center;
+}
+.image {
+    width: 50%;
+    margin: 10px auto;
+}
+.material-icons {
+    color: #d4961c;
+}
+.favrt, .cart {
+    border-radius: 5px;
+    border: 1px solid #d4961c;
+    width: 70px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.favorite,.carts {
+    color: #a8181c;
+}
+@media only screen and (max-width: 920px) {
+    .card {
+      width: 38%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .card {
+      width: 65%;
+    }
+}

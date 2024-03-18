@@ -1,0 +1,14 @@
+<div class="main">
+    <div *ngFor="let vehicle of vehicleList" class="card">
+        <mat-card class="card-inner">
+            <mat-card-title>Brand : {{vehicle.vehicle}}</mat-card-title>
+            <img mat-card-image [src]="vehicle.avatar" class="image">
+            <mat-card-subtitle>Price : {{vehicle.price}}</mat-card-subtitle>
+            <mat-card-actions>
+                <button class="favrt" mat-button (click)="addFavourite(vehicle.id)"><i class="material-icons"  [ngClass]="{ 'favorite' : vehicle.favourite}">favorite</i></button>
+                <button class="cart" mat-button (click)="addCart(vehicle.id)" ><i class="material-icons" [ngClass]="{ 'carts' : vehicle.cart}">add_shopping_cart</i></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+  
+</div>

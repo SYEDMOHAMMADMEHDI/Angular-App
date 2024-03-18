@@ -1,0 +1,44 @@
+<mat-toolbar class="app-header">
+    <div class="header">
+        <div>
+            <mat-button-toggle class="menu-btn" aria-label="Text align justify" (click)="sidenav.toggle()">
+                <mat-icon>format_align_justify</mat-icon>
+            </mat-button-toggle>
+        </div>
+        <div class="logo">
+            <!-- <button type ="menu"><i class="fa-solid fa-bars"></i></button> -->
+            <img class="logoImg" src="assets/logo.png" alt="company-logo">
+        </div>
+        <div class="name">
+            <h1 class="compName">Vehicle Company</h1>
+        </div>
+    </div>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="container">
+    <mat-sidenav  #sidenav [mode]="(isHandset$ | async) ? 'over' : 'side'"   class="app-sidenav" [opened]="!(isHandset$ | async)" >
+        <div>
+            <ul class="menu">
+                <a href="#" routerLink="/"><li class="one" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</li></a>
+                <a href="#" routerLink="/browser"><li class="two" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Browser</li></a>
+                <a href="#" routerLink="/favourites"><li class="three" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Favourites</li></a>
+                <a href="#" routerLink="/cart"><li class="four" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Cart</li></a>
+            </ul>
+        </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+<mat-toolbar class="app-footer">
+    <div class="footer">
+        <p class="footer-text">Copyright@2022.All rights reserved</p>
+    </div>
+
+</mat-toolbar>

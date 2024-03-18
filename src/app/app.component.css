@@ -1,0 +1,95 @@
+.container {
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+}
+
+.header {
+    display: flex;
+}
+.app-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    border-right: 1px solid #d4961c;
+    background: #ffffff;
+}
+  
+.app-header {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    background-color: #a8181c;
+    border-bottom: 10px solid #d4961c;
+}
+  
+.app-footer {
+    background-color: #a8181c;
+    border-top: 10px solid #d4961c;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.logoImg {
+    width: 55px;
+}
+.compName {
+    font: 20px Arial, sans-serif;
+    color: #d4961c;
+}
+.name {
+    margin: 15px auto;
+}
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    
+}
+li {
+    background-color: #a8181c;
+    border-bottom: 1px solid #d4961c;
+    color: #d4961c;
+    padding: 15px;
+    text-align: center;
+}
+
+li:hover {
+    background-color: #d4961c;
+    color: #a8181c;
+}
+.footer-text {
+    font: 10px Arial, sans-serif;
+    color: #d4961c;
+    text-align: center;
+}
+.footer {
+    margin: 0 auto;
+}
+.menu-btn {
+    background-color: #a8181c;
+    border: none;
+    color: #d4961c;
+}
+.active {
+    background-color: #0b2404;
+}
+ @media only screen and (max-width : 600px){
+     .container {
+         top: 56px;
+     }
+     .menu-btn {
+         height: 40px;
+     }
+ }

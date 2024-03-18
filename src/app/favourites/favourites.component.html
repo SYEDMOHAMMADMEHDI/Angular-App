@@ -1,0 +1,23 @@
+<div *ngIf = "favouriteVehicleData.length === 0" class="noFavourites">
+    <p class="noFavouritesText">There are no favourites vehicles!!!</p>
+    <a href="#" routerLink="/browser" class="noFavouritesLink">Click here to Browse Vehicles</a>
+</div>
+
+<div class="main">
+    <div *ngFor="let result of favouriteVehicleData" class="card">
+        <mat-card class="card-inner">
+            <mat-card-actions class="remove-btn" (click)="remove(result.id)">
+                <mat-icon class="close">close</mat-icon>
+            </mat-card-actions>
+            <mat-card-title>Brand :{{result.vehicle}}</mat-card-title>
+            <img mat-card-image [src]="result.avatar" class="image">
+            <mat-card-subtitle>Price : {{result.price}}</mat-card-subtitle>
+            <mat-card-subtitle>Manufacturer : {{result.manufacturer}}</mat-card-subtitle>
+            <mat-card-subtitle>Model : {{result.model}}</mat-card-subtitle>
+            <mat-card-subtitle>Type : {{result.type}}</mat-card-subtitle>
+            <mat-card-actions>
+                <button class="cart" (click)="addToCart(result.id)" mat-button><i class="material-icons">add_shopping_cart</i></button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

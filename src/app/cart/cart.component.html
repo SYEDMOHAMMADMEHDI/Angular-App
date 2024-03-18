@@ -1,0 +1,50 @@
+<div *ngIf = "cartVehicleData.length === 0" class="noCart">
+    <p class="noCartText">There are no items in your Cart!!!</p>
+    <a href="#" routerLink="/browser" class="noCartLink">Click here to Browse Vehicles</a>
+</div>
+
+<div class="main">
+    <div class="leftCards">
+    <div *ngFor="let result of cartVehicleData" class="card">
+        <mat-card class="card-inner">
+            <div>
+                <mat-card-actions class="removeBtn" (click)="remove(result.id)">
+                    <mat-icon class="close">close</mat-icon>
+                </mat-card-actions>
+            </div>
+           <div class="content">
+                <div class="leftContent">
+                    <div class="vehicleImage">
+                        <img mat-card-image [src]="result.avatar" class="image">
+                    </div>
+                    <div class="qtyButton">
+                        <button type="button" class="qty-decrease" (click)="qtyDecrease(result.id)">-</button>
+                        <input type="text"  [value]="quantityList[(result.id)]" class="qtyInput">
+                        <button type="button" class="qty-increase" (click)="qtyIncrease(result.id)">+</button>
+                    </div>
+                </div>
+
+                <div class="rightContent">
+                    <mat-card-title>Brand :{{result.vehicle}}</mat-card-title>
+                    <mat-card-subtitle>Price : {{(convertString(result.price) * quantityList[(result.id)]) | number:'1.2-2'}} </mat-card-subtitle>
+                    <mat-card-subtitle>Manufacturer : {{result.manufacturer}}</mat-card-subtitle>
+                    <mat-card-subtitle>Model : {{result.model}}</mat-card-subtitle>
+                    <mat-card-subtitle>Type : {{result.type}}</mat-card-subtitle>
+                    <mat-card-subtitle>Model : {{result.color}}</mat-card-subtitle>
+                    <mat-card-subtitle>Type : {{result.type}}</mat-card-subtitle>
+                </div>
+           </div>
+        </mat-card>
+    </div>
+    </div>
+    <div  class="rightCards" *ngIf="cartVehicleData.length !== 0">
+        <mat-card>
+            <div class="total">
+                <mat-card-title>Grand Total : {{totalPrice | number:'1.2-2'}}</mat-card-title>
+            </div>
+        </mat-card>
+    </div>
+
+  
+   
+</div>

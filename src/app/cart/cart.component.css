@@ -1,0 +1,70 @@
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+.card {
+    width: 100%;
+    margin: 25px;
+}
+.leftCards {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.rightCards {
+    width: 25%;
+    margin: 25px;
+}
+.content {
+    display: flex;
+}
+.leftContent {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.vehicleImage {
+    display: flex;
+    margin: 50px 15px;
+    float: left;
+}
+.image {
+    width: 115px;
+}
+.qtyButton {
+    display: flex;
+    margin-left: 15px;
+}
+.removeBtn {
+    float: right;
+    cursor: pointer;
+}
+.qtyInput {
+    width: 25px;
+    text-align: center;
+}
+.rightContent {
+    margin: 30px;
+}
+.noCart {
+    text-align: center;
+    margin: 25px;
+}
+.qty-decrease, .qty-increase, .qtyInput {
+    cursor:pointer;
+    font-size: 20px;
+}
+@media only screen and (max-width: 600px){
+   .main {
+       flex-direction: column;
+   }
+   .leftCards {
+       width: 85%;
+   }
+   .rightCards {
+       width: 85%;
+   }
+   .qtyButton {
+       margin-left: 0;
+   }
+}
